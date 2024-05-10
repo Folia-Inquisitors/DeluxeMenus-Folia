@@ -21,10 +21,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
-public class ClickActionTask extends BukkitRunnable {
+public class ClickActionTask implements Runnable {
 
     private final DeluxeMenus plugin;
     private final UUID uuid;

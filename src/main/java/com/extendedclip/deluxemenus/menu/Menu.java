@@ -10,6 +10,9 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.logging.Level;
+
+import io.github.projectunified.minelib.scheduler.async.AsyncScheduler;
+import io.github.projectunified.minelib.scheduler.global.GlobalScheduler;
 import me.clip.placeholderapi.util.Msg;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -205,7 +208,7 @@ public class Menu extends Command {
     }
 
     if (close) {
-      Bukkit.getScheduler().runTask(DeluxeMenus.getInstance(), () -> {
+      GlobalScheduler.get(DeluxeMenus.getInstance()).run(() -> {
         p.closeInventory();
         cleanInventory(p, DeluxeMenus.getInstance().getMenuItemMarker());
       });
@@ -389,7 +392,7 @@ public class Menu extends Command {
       return;
     }
 
-    Bukkit.getScheduler().runTaskAsynchronously(DeluxeMenus.getInstance(), () -> {
+    AsyncScheduler.get(DeluxeMenus.getInstance()).run(() -> {
 
       Set<MenuItem> activeItems = new HashSet<>();
 
@@ -480,7 +483,7 @@ public class Menu extends Command {
 
       final boolean updatePlaceholders = update;
 
-      Bukkit.getScheduler().runTask(DeluxeMenus.getInstance(), () -> {
+      GlobalScheduler.get(DeluxeMenus.getInstance()).run(() -> {
         if (inMenu(holder.getViewer())) {
           closeMenu(holder.getViewer(), false);
         }
