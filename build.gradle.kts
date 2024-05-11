@@ -40,6 +40,7 @@ dependencies {
     implementation(libs.adventure.minimessage)
     implementation(libs.minelib.scheduler.global)
     implementation(libs.minelib.scheduler.async)
+    implementation(libs.minelib.scheduler.entity)
     implementation(libs.minelib.scheduler.canceller)
 
     compileOnly("org.jetbrains:annotations:23.0.0")

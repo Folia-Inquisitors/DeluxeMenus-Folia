@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import io.github.projectunified.minelib.scheduler.entity.EntityScheduler;
 import io.github.projectunified.minelib.scheduler.global.GlobalScheduler;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -184,7 +185,7 @@ public class DeluxeMenusCommands implements CommandExecutor {
               true
       );
 
-      GlobalScheduler scheduler = GlobalScheduler.get(plugin);
+      EntityScheduler scheduler = EntityScheduler.get(plugin, holder.getViewer());
 
       if (action.hasDelay()) {
         scheduler.runLater(actionTask, action.getDelay(holder));

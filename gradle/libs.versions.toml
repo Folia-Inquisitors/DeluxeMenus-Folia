@@ -34,4 +34,5 @@ adventure-platform = { module = "net.kyori:adventure-platform-bukkit", version.r
 adventure-minimessage = { module = "net.kyori:adventure-text-minimessage", version.ref = "adventure-minimessage" }
 minelib-scheduler-global = { module = "io.github.projectunified:minelib-scheduler-global", version.ref = "minelib" }
 minelib-scheduler-async = { module = "io.github.projectunified:minelib-scheduler-async", version.ref = "minelib" }
+minelib-scheduler-entity = { module = "io.github.projectunified:minelib-scheduler-entity", version.ref = "minelib" }
 minelib-scheduler-canceller = { module = "io.github.projectunified:minelib-scheduler-canceller", version.ref = "minelib" }

@@ -29,6 +29,7 @@ import com.extendedclip.deluxemenus.requirement.wrappers.ItemWrapper;
 import com.extendedclip.deluxemenus.utils.DebugLevel;
 import com.extendedclip.deluxemenus.utils.LocationUtils;
 import com.extendedclip.deluxemenus.utils.VersionHelper;
+import io.github.projectunified.minelib.scheduler.entity.EntityScheduler;
 import io.github.projectunified.minelib.scheduler.global.GlobalScheduler;
 import org.bukkit.DyeColor;
 import org.bukkit.Location;
@@ -1529,7 +1530,7 @@ public class DeluxeMenusConfig {
                     holder.parsePlaceholdersInArguments()
             );
 
-            GlobalScheduler scheduler = GlobalScheduler.get(plugin);
+            EntityScheduler scheduler = EntityScheduler.get(plugin, holder.getViewer());
 
             if (action.hasDelay()) {
               scheduler.runLater(actionTask, action.getDelay(holder));
